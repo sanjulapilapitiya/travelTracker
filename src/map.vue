@@ -2,7 +2,7 @@
     <div id="map" style="height: 500px;"></div>
   </template>
   
-  <script>
+<script>
   import { onMounted } from 'vue'; // Import the Vue 3 lifecycle hook
   import L from 'leaflet'; // Import Leaflet
   
@@ -50,5 +50,5 @@
       });
     },
   };
-  </script>
+</script>
   
