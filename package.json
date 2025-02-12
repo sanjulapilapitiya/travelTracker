@@ -22,7 +22,8 @@
   "dependencies": {
     "leaflet": "^1.9.4",
     "vue": "^3.x.x",
-    "vue-confetti-explosion": "^1.0.2"
+    "vue-confetti-explosion": "^1.0.2",
+    "vue-spinner": "^1.0.4"
   },
   "devDependencies": {
     "@vue/cli-service": "^5.0.8",

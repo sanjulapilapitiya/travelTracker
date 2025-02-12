@@ -14,7 +14,6 @@
     emits: ['marker-selected'],
     setup(props, { emit }) {
       onMounted(() => {
-        console.log(props.locations);
         // Fix for missing marker icons
         delete L.Icon.Default.prototype._getIconUrl;
 
