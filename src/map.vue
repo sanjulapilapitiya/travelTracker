@@ -24,7 +24,16 @@
         });
 
         // Initialize the map
-        const map = L.map('map').setView([51.505, -0.09], 2); // Set the initial view (latitude, longitude, zoom level)
+        const map = L.map('map', {
+          center: [40, 50],
+          zoom: 2,
+          maxBounds: [
+            [-90, -180],
+            [90, 180]
+          ],
+          maxBoundsViscosity: 1.0,
+          worldCopyJump: false
+        });
   
         L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -39,13 +48,15 @@
         });
   
         // Add markers to the map for each location
-        props.locations.forEach((location) => {
-          L.marker([location.lat, location.lng], { icon: customIcon }).addTo(map)
-            .bindPopup(`<b>${location.name}</b>`)
-            .on('click', () => {
-                emit('marker-selected', location);
-            });
-        });
+        if (Array.isArray(props.locations)) {
+          props.locations.forEach((location) => {
+            L.marker([location.lat, location.lng], { icon: customIcon }).addTo(map)
+              .bindPopup(`<b>${location.name}</b>`)
+              .on('click', () => {
+                  emit('marker-selected', location);
+              });
+          });
+        }
       });
     },
   };

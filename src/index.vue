@@ -43,7 +43,7 @@
       };
     },
     setup() {
-        // Define an array of locations to display on the map
+        // Backend not supported on github pages so using hardcoded data, preferably this would be a backend call
         const locations = ref([
             { lat: 54.535868, lng: -2.152434, name: 'England', description: 'lived here for nearly my entire life, here are my highlights pics:', insta: "" },
             { lat: 48.8566, lng: 2.3522, name: 'France', description: 'just across the pond from where I live, been here a couple times. ignited my passion for traveling as one of the first countries I went to where I have not lived in', insta: "" },
@@ -109,10 +109,11 @@ h2 {
 #app {
     text-align: center;
     width: 100%;
+    height: 100%;
     background: linear-gradient(-45deg, #fefae0, #dda15e, #bc6c25);
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
-    height: 100vh;
+    min-height: 100vh;
 }
 .container {
     width: 100%;
